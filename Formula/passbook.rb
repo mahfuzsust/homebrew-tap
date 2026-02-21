@@ -5,21 +5,21 @@
 class Passbook < Formula
   desc "Terminal-based password manager built in Go"
   homepage "https://github.com/mahfuzsust/passbook"
-  version "3.0.7"
+  version "3.0.8"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.7/passbook_3.0.7_darwin_amd64.tar.gz"
-      sha256 "b590558dc56803f8bbbb5b3ee1f2b6388b6b593a211833f0cb602ce81eb1c7a8"
+      url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.8/passbook_3.0.8_darwin_amd64.tar.gz"
+      sha256 "8e003121992b19d8ee58b80fb5fbcb5dc71021fdd9d05f8faa04af71ac7255c8"
 
       def install
         bin.install "passbook"
       end
     end
     on_arm do
-      url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.7/passbook_3.0.7_darwin_arm64.tar.gz"
-      sha256 "4b6ebeb59380b1764b0dd20c3e4dcfb2036d100fadbc04c83ebcb8e83cc95c2f"
+      url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.8/passbook_3.0.8_darwin_arm64.tar.gz"
+      sha256 "033584183f49ea20fa6366e34d024132fce95f01d0609ff2a8d80d9a85ee4966"
 
       def install
         bin.install "passbook"
@@ -30,8 +30,8 @@ class Passbook < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.7/passbook_3.0.7_linux_amd64.tar.gz"
-        sha256 "a687db65a26d67a9cb9e7ca00bc039ab875f8590feb2ca673fa94ef1f19169bb"
+        url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.8/passbook_3.0.8_linux_amd64.tar.gz"
+        sha256 "e4fdc39c4aa71f5fb45bede2849f994592b1d1f5b32ec268cb395b15d42dad02"
 
         def install
           bin.install "passbook"
@@ -40,8 +40,8 @@ class Passbook < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.7/passbook_3.0.7_linux_arm64.tar.gz"
-        sha256 "9c9dcc481af342099706d7856d1ef438c31455bca80ff0645c2acc83ac71cddf"
+        url "https://github.com/mahfuzsust/passbook/releases/download/v3.0.8/passbook_3.0.8_linux_arm64.tar.gz"
+        sha256 "5c34bc8963edf72631326e1bcc36dccfae1d6b5b1e3602fe077214ce797725a8"
 
         def install
           bin.install "passbook"
