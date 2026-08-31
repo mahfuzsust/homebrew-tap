@@ -5,52 +5,28 @@
 class Passbook < Formula
   desc "Terminal-based password manager built in Go"
   homepage "https://github.com/mahfuzsust/passbook"
-  version "6.0.2"
+  version "7.0.0"
   license "MIT"
+  depends_on :macos
 
-  on_macos do
-    on_intel do
-      url "https://github.com/mahfuzsust/passbook/releases/download/v6.0.2/passbook_6.0.2_darwin_amd64.tar.gz"
-      sha256 "3de0630ea119efbf1bf0b579631cd5c0884c676d596f485f95c8417d7c4dabb7"
+  if Hardware::CPU.intel?
+    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.0/passbook_7.0.0_darwin_amd64.tar.gz"
+    sha256 "e62dc87daaf5888afd3b2a61473021e8139b85aea18258ddfc00fc115727b2f9"
 
-      def install
-        bin.install "passbook"
-      end
-    end
-    on_arm do
-      url "https://github.com/mahfuzsust/passbook/releases/download/v6.0.2/passbook_6.0.2_darwin_arm64.tar.gz"
-      sha256 "1b61c49ed0b9c47012eb0415b77d1913137548b42363c8433c686599a48fde9e"
-
-      def install
-        bin.install "passbook"
-      end
+    define_method(:install) do
+      bin.install "passbook"
     end
   end
+  if Hardware::CPU.arm?
+    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.0/passbook_7.0.0_darwin_arm64.tar.gz"
+    sha256 "14c4914f79ba2d63fc5e0df19fbaaeef9738df4b6096fa803aa115777ad5701b"
 
-  on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/mahfuzsust/passbook/releases/download/v6.0.2/passbook_6.0.2_linux_amd64.tar.gz"
-        sha256 "6a054e7c26c396a8190c2739f8695fcf156a05f12c0f0b1b54a7ba997eda9d3d"
-
-        def install
-          bin.install "passbook"
-        end
-      end
-    end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/mahfuzsust/passbook/releases/download/v6.0.2/passbook_6.0.2_linux_arm64.tar.gz"
-        sha256 "62961d468df9ca8c5e3fc1f2a4d9c631ac590ae99bd568fce28b7f8f468a7eac"
-
-        def install
-          bin.install "passbook"
-        end
-      end
+    define_method(:install) do
+      bin.install "passbook"
     end
   end
 
   test do
-    system "#{bin}/passbook", "--help"
+    system "#{bin}/passbook", "--version"
   end
 end
