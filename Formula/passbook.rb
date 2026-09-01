@@ -5,21 +5,21 @@
 class Passbook < Formula
   desc "Terminal-based password manager built in Go"
   homepage "https://github.com/mahfuzsust/passbook"
-  version "7.0.0"
+  version "7.0.1"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.0/passbook_7.0.0_darwin_amd64.tar.gz"
-    sha256 "e62dc87daaf5888afd3b2a61473021e8139b85aea18258ddfc00fc115727b2f9"
+    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.1/passbook_7.0.1_darwin_amd64.tar.gz"
+    sha256 "77bb1b07f72b522a2fd247cc90756ae8172fe554181692ac6ea3f90882f8c1f7"
 
     define_method(:install) do
       bin.install "passbook"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.0/passbook_7.0.0_darwin_arm64.tar.gz"
-    sha256 "14c4914f79ba2d63fc5e0df19fbaaeef9738df4b6096fa803aa115777ad5701b"
+    url "https://github.com/mahfuzsust/passbook/releases/download/v7.0.1/passbook_7.0.1_darwin_arm64.tar.gz"
+    sha256 "96ca76e2b53add6b599f74ae4505a5b49657fdbf8713a5bc8d39549bb95923b6"
 
     define_method(:install) do
       bin.install "passbook"
